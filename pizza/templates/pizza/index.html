@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Pizza</title>
+    <!-- Bootstrap CSS (Cloudflare CDN) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+    <!-- jQuery (Cloudflare CDN) -->
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+    <!-- Bootstrap Bundle JS (Cloudflare CDN) -->
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.bundle.min.js" integrity="sha512-wV7Yj1alIZDqZFCUQJy85VN+qvEIly93fIQAN7iqDFCPEucLCeNFz4r35FCo9s6WrpdDQPi80xbljXB8Bjtvcg==" crossorigin="anonymous"></script>
+</head>
+</head>
+<body>
+    <div class="container">
+        <header class="mt-2 mb-2" role="banner">
+            <h1>Welcome Pizza!</h1>
+        </header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <div class="col-md-11 px-0">
+                    <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+                    </div>
+                    <div class="col-md-1 pl-2 pr-0">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    </div>
+            </div>
+        </nav>
+        <div class="row justify-content-end p-5">
+            <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                <label class="btn btn-secondary active">
+                    <input type="radio" name="options" id="option1" autocomplete="off" checked>Все
+                </label>
+                <label class="btn btn-secondary">
+                    <input type="radio" name="options" id="option2" autocomplete="off">Мясные
+                </label>
+                <label class="btn btn-secondary">
+                    <input type="radio" name="options" id="option3" autocomplete="off">С курицей
+                </label>
+                <label class="btn btn-secondary">
+                    <input type="radio" name="options" id="option4" autocomplete="off">Сырные
+                </label>
+                <label class="btn btn-secondary">
+                    <input type="radio" name="options" id="option5" autocomplete="off">Вегетарианские
+                </label>
+            </div>
+        </div>
+        <div class="row">
+            {% for pizza_elem in pizza %}
+                <div class="col-sm-3">
+                    <div class="text-center">
+                        <div class="media">
+                            <img src="{{ pizza_elem.image.url }}" class="img-fluid" alt="">
+                        </div>
+                        <a href="{{ pizza_elem.get_absolute_url }}" class="">{{ pizza_elem.name }}</a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>
