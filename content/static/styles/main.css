@@ -1,0 +1,32 @@
+.block {
+    background-color: #ddd;
+    padding: 20px;
+    text-align: center;
+    height:100%;
+}
+.header{
+    min-height: 90px;
+    margin-bottom: 20px;
+}
+.promotion {
+    min-height: 200px;
+    margin-bottom: 20px;
+}
+.content{
+    min-height: 100px;
+    margin-bottom: 20px;
+}
+.filters {
+    min-height: 100px;
+    margin-bottom: 20px;
+}
+.footer {
+    min-height: 200px;
+    margin-bottom: 20px;
+}
+.btn-register{
+    border: solid 1px;
+}
+.search-field{
+    border: solid 1px;
+}

@@ -10,11 +10,16 @@ class Category(models.Model):
     url = models.SlugField(max_length=170, unique=True)
 
 
+class Promotions(models.Model):
+    promo = models.CharField("Промо фкция", max_length=170)
+    image = models.ImageField("Изображение", upload_to='promo/')
+
+
 class Pizza(models.Model):
     name = models.CharField("Название", max_length=100)
     description = models.TextField("Описание")
     #pizza_size = models.CharField("Размер", max_length=40)
-    image = models.ImageField("Изображение", upload_to='pizza/')
+    image = models.ImageField("Изображение", upload_to='content/')
     url = models.SlugField(max_length=170, unique=True)
     #category = models.ForeignKey(Category, verbose_name="Категория", on_delete=models.SET_NULL, null=True)
 

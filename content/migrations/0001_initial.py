@@ -25,7 +25,7 @@ class Migration(migrations.Migration):
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('name', models.CharField(max_length=100, verbose_name='Название')),
                 ('description', models.TextField(verbose_name='Описание')),
-                ('image', models.ImageField(upload_to='pizza/', verbose_name='Изображение')),
+                ('image', models.ImageField(upload_to='content/', verbose_name='Изображение')),
                 ('url', models.SlugField(max_length=170, unique=True)),
             ],
             options={
