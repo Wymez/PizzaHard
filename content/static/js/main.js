@@ -7,7 +7,10 @@ function sendRequest(url, method="GET", data={}) {
         console.log(response)
     })
 }
-$(".filter").on('click', event => {
+$(".filter").click(event => {
     let current = $(".active")
-    console.log(current);
+    if(current[0])
+        console.log(current[0].className.replace("active",""))
+        current[0].className = current[0].className.replace("active","");
+        $(event.target).addClass("active");
 })
