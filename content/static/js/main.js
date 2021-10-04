@@ -10,7 +10,8 @@ function sendRequest(url, method="GET", data={}) {
 $(".filter").click(event => {
     let current = $(".active")
     if(current[0])
-        console.log(current[0].className.replace("active",""))
         current[0].className = current[0].className.replace("active","");
-        $(event.target).addClass("active");
+    $(event.target).addClass("active");
+    console.log(event.target.id);
+    sendRequest(event.target.id,"GET")
 })
