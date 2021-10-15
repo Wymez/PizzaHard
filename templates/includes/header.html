@@ -1,0 +1,19 @@
+<header class="header row">
+
+    <div class="col-3">
+        <div class="block">
+            <h1>Welcome Pizza!</h1>
+        </div>
+    </div>
+    <div class="col">
+        <div class="block">
+            {% if request.user.is_authenticated%}
+                Hello {{ request.user.first_name}},
+                <a href="{% url 'logout' %}">logout</a>
+            {% else %}
+                <a href="{% url 'login' %}">Log-in</a>
+                <a href="{% url 'register' %}">Register</a>
+            {% endif %}
+        </div>
+    </div>
+</header>
