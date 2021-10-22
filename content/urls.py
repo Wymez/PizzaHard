@@ -4,8 +4,7 @@ from . import views
 
 
 urlpatterns = [
-    path('<str:sorting_attribute>/', views.sorting, name='sorting'),
-    path('', views.index),
+    path('', views.pizza_list),
     path('<slug:slug>/', views.pizza_detail, name='pizza_detail')
 
 ]
