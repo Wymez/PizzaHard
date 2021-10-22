@@ -1,0 +1,65 @@
+.pizza-card {
+    height: 700px;
+}
+
+.pizza-card__container {
+    background-color: #E7DAD9;
+    height: auto;
+    padding: 0px;
+}
+
+.pizza-card__img {
+    height: 50%;
+    margin: 0px;
+    padding-top: 10px;
+}
+.pizza-card__name {
+    height: 5%;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+}
+.pizza-card__size {
+    justify-content: center;
+    margin: 10px 10px;
+    font-size: 15px;
+}
+
+.pizza-card__thickness {
+    justify-content: center;
+    font-size: 15px;
+}
+
+.pizza-card__description {
+    height: 15%;
+    width: auto;
+    margin: 0px;
+    font-size: 14px;
+}
+
+.pizza-card__price {
+    justify-content: center;
+    font-size: 20px;
+    border-top: 1px solid black;
+    margin: 0px 110px;
+    padding-top: 10px;
+}
+
+.pizza-card__basket {
+    font-size: 15px;
+    margin-top: 20px;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+.pizza-card__button {
+    background-color: #FA8386;
+    color: white;
+    margin: 4px;
+    padding: 4px 8px;
+    border: none;
+    text-align: center;
+}
+.pizza-card__button:hover {
+    background-color: #E85800;
+}

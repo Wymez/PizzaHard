@@ -1,0 +1,7 @@
+.promotion {
+    background-image: url('../../img_pizza/РозоваяПицца.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    height: 700px;
+}

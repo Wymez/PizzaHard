@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block content %}
+        <div class="promotion row"></div>
+        <div class="filters row">
+            <div class="col">
+                <button class="filter" id="name">В прямом порядке</button>
+                <button class="filter" id="-name">В обратном порядке</button>
+                <button class="filter" id="price">По стоимости</button>
+            </div>
+        </div>
+        <div class="content row">
+            {% for content_elem in many_pizzas %}
+                <div class="pizza-card col-4 py-1">
+                    <div class="pizza-card__container container h-100 w-100">
+                        <div class="pizza-card__img row">
+                            <a class="h-100 w-100" href="{{ content_elem.get_absolute_url }}">
+                                <img src="{{ content_elem.image.url }}" class="h-100 w-100" alt="">
+                            </a>
+                        </div>
+                        <div class="row"><a class="pizza-card__name" href="{{ content_elem.get_absolute_url }}">{{ content_elem.name }}</a></div>
+                        <div class="pizza-card__size row">
+                            <button class="pizza-card__button col-auto">24 см</button>
+                            <button class="pizza-card__button col-auto">30 см</button>
+                            <button class="pizza-card__button col-auto">40 см</button>
+                        </div>
+                        <div class="pizza-card__thickness row">
+                            <button class="pizza-card__button col-auto">Тонкое</button>
+                            <button class="pizza-card__button col-auto">Стандартное</button>
+                        </div>
+                        <div class="pizza-card__description row">
+                            {{ content_elem.description }}
+                        </div>
+                        <div class="pizza-card__price row">{{ content_elem.price }} руб.</div>
+                        <div class="pizza-card__basket row justify-content-center">
+                            <button class="pizza-card__button col-5">В корзину</button>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+{% endblock %}
