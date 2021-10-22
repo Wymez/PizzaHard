@@ -1,19 +1,31 @@
-<header class="header row">
+{% load static %}
 
-    <div class="col-3">
-        <div class="block">
-            <h1>Welcome Pizza!</h1>
-        </div>
-    </div>
-    <div class="col">
-        <div class="block">
-            {% if request.user.is_authenticated%}
-                Hello {{ request.user.first_name}},
-                <a href="{% url 'logout' %}">logout</a>
-            {% else %}
-                <a href="{% url 'login' %}">Log-in</a>
-                <a href="{% url 'register' %}">Register</a>
-            {% endif %}
+<header class="header">
+    <div class="container__navbar">
+        <div class="header__body">
+            <a href="#" class="header__logo">
+                <img src="{% static 'src/img/pizza-italiano.png' %}" alt="">
+            </a>
+            <div class="header__burger">
+                <span></span>
+            </div>
+            <nav class="header__menu">
+                <ul class="header__list">
+                    {% if request.user.is_authenticated %}
+                    <li>
+                        Hello {{ request.user.first_name}},
+                        <a href="{% url 'logout' %}">logout</a>
+                    </li>
+                    {% else %}
+                    <li>
+                        <a href="" class="">Войти</a>
+                    </li>
+                    <li>
+                        <a href="" class="popup-open">Регистрация</a>
+                    </li>
+                    {% endif %}
+                </ul>
+            </nav>
         </div>
     </div>
 </header>
