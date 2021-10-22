@@ -4,7 +4,7 @@
 /*TODO: Выносить цвета, шрифты в переменные*/
 /*TODO: Выносить повторяющиеся стили в миксины*/
 @import "content/pizza-card.css";
-@import "includes/header.css";
+@import "includes/header1.css";
 @import "content/promotion.css";
 .block {
     background-color: #ddd;
