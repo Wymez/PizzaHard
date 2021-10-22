@@ -1,0 +1,54 @@
+.block {
+    background-color: #ddd;
+    padding: 20px;
+    height: 100%;
+}
+
+.header {
+    min-height: 90px;
+    margin-bottom: 20px;
+}
+
+.promotion {
+    min-height: 200px;
+    margin-bottom: 20px;
+}
+
+.content {
+    min-height: 100px;
+    margin-bottom: 20px;
+}
+
+.filters {
+    margin-bottom: 20px;
+}
+
+.footer {
+    min-height: 200px;
+    margin-bottom: 20px;
+}
+
+.btn-register {
+    border: solid 1px;
+}
+
+.search-field {
+    border: solid 1px;
+}
+
+.filter {
+    border: none;
+    outline: none;
+    padding: 12px 16px;
+    background-color: #f1f1f1;
+    cursor: pointer;
+}
+
+.filter:hover {
+    background-color: #ddd;
+}
+
+.filter.active {
+    background-color: #666;
+    color: white;
+}
