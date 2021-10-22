@@ -1,0 +1,8 @@
+.promotion {
+    background: url('../../src/img/РозоваяПицца.png') no-repeat;
+    background-size: contain;
+    background-position: top;
+    background-attachment: fixed;
+    height: 400px;
+    top: 0;
+}

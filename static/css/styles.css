@@ -1,161 +1,79 @@
-*,*: before,*:after{
-	padding: 0;
-	margin: 0;
-	border: 0;
-	box-sizing: border-box;
+/*TODO: нужно разбить на отдельные файлы*/
+/*Для пунктов ниже нужно настроить Webpack c SCSS*/
+/*TODO: классы описывать с вложенностью по БЭМ*/
+/*TODO: Выносить цвета, шрифты в переменные*/
+/*TODO: Выносить повторяющиеся стили в миксины*/
+@import "content/pizza-card.css";
+@import "header/menu.css";
+@import "content/promotion.css";
+.block {
+    background-color: #ddd;
+    height: 100%;
+}
+
+.promotion {
+    min-height: 200px;
+    margin-bottom: 20px;
+}
+
+.content {
+    min-height: 100px;
+    margin-bottom: 20px;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+.filters {
+    margin-bottom: 20px;
+    margin-left: 100px;
+}
+
+.footer {
+    min-height: 200px;
+    margin-bottom: 20px;
+}
+
+.btn-register {
+    border: solid 1px;
+}
+
+.search-field {
+    border: solid 1px;
+}
+
+.filter {
+    border: none;
+    outline: none;
+    padding: 12px 16px;
+    background-color: #FA8386;
+    color: white;
+    cursor: pointer;
+}
+
+.filter:hover {
+    background-color: #E85800;
+}
+
+.filter.active {
+    background-color: #E85800;
+}
+
+
+.pizza_button {
+    background-color: red; /* Green */
+    border: none;
+    padding: 10px 24px;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
 }
 html, body {
-	height: 100%;
-	font-family: Arial
+    background-color: white;
+    margin: 0;
+    padding: 0;
+    width: 100%;
 }
-.wrapper {
-}
-.container__navbar {
-	max-width: 1180px;
-	margin: 0px auto;
-	padding: 0px 10px;
-}
-.header {
-	position: fixed;
-	width: 100%;
-	top: 0;
-	left: 0;
-	z-index: 50;
-}
-.header:before{
-	content: '';
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	background-color: #5e5373;
-	z-index: 3;
-}
-.header__body {
-	position: relative;
-	display: flex;
-	justify-content: space-between;
-	height: 80px;
-	align-items: center;
-}
-.header__logo {
-	flex: 0 0 150px;
-	overflow: hidden;
-	position: relative;
-	z-index: 10;
-}
-.header__logo img{
-	max-width: 100%;
-	display: block;
-}
-.header__burger {
-	display: none;
-}
-.header__menu {
-	margin: 0px 20px 0px 0px;
-}
-.header__list {
-	display: flex;
-	position: relative;
-	margin: 0px 0px 0px 0px;
-	z-index: 4;
-}
-.header__list li{
-	list-style: none;
-	margin: 0px 0px 0px 20px;
-}
-.header__link {
-	color: #fff;
-	font-size: 18px;
-	text-decoration: none;
-}
-@media (max-width: 805px){
-	body.lock{
-		overflow: hidden;
-	}
-	.header__body{
-		height: 50;
-	}
-	.header__logo{
-		flex: 0 0 150px;
-	}
-	.header__burger {
-		margin: 0px 20px 0px 0px;
-		display: block;
-		position: relative;
-		width: 30px;
-		height: 20px;
-		z-index: 4;
-	}
-	.header__burger span{
-		position: absolute;
-		background-color: #fff;
-		left: 0;
-		width: 100%;
-		height: 2px;
-		top: 9px;
-		transition: all 0.3s ease 0s;
-	}
-	.header__burger:before,
-	.header__burger:after{
-		content: '';
-		background-color: #fff;
-		position: absolute;
-		width: 100%;
-		height: 2px;
-		left: 0;
-	}
-	.header__burger:before{
-		transition: all 0.3s ease 0s;
-		top: 0;
-	}
-	.header__burger:after{
-		transition: all 0.3s ease 0s;
-		bottom: 0;
-	}
-	.header__burger.active:before {
-		transition: all 0.3s ease 0s;
-		transform: rotate(45deg);
-		top: 9px;
-	}
-	.header__burger.active:after {
-		transition: all 0.3s ease 0s;
-		transform: rotate(-45deg);
-		bottom: 9px;
-	}
-	.header__burger.active span {
-		transform: scale(0);
-	}
-	.header__menu {
-		position: fixed;
-		top: -100%;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		transition: all 0.3s ease 0s;
-		background-color: #18b5a4;
-		overflow: auto;
-		padding: 70px 0px 0px 0px;
-	}
-	.header__menu.active {
-		top: 0;
-	}
-	.header__list {
-		display: block;
-		margin: 20px 0px 10px 0px;
-	}
-	.header__list li{
-		margin: 10px 0px 10px 0px;
-	}
-	.header__link{
-		font-size: 18px;
-	}
-}
-.content {
-	padding: 100px;
-}
-.container {
-}
-.content__text {
-}
+
+

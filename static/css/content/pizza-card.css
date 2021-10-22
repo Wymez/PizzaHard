@@ -33,7 +33,7 @@
 .pizza-card__description {
     height: 15%;
     width: auto;
-    margin: 0px;
+    margin: 10px 10px 10px 10px;
     font-size: 14px;
 }
 
