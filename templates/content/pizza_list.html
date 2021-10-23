@@ -4,14 +4,13 @@
 
 {% block content %}
         <div class="promotion row"></div>
-        <div class="filters row">
-            <div class="col">
-                <button class="filter" id="name">В прямом порядке</button>
-                <button class="filter" id="-name">В обратном порядке</button>
-                <button class="filter" id="price">По стоимости</button>
-            </div>
-        </div>
         <div class="content row">
+            <div class="col-12">
+                <button class="content__sorting-button" id="price">Сначала дешевле</button>
+                <button class="content__sorting-button" id="-price">Сначала дороже</button>
+                <button class="content__sorting-button" id="name">По названию</button>
+                <button class="content__sorting-button" id="id">Сброс</button>
+            </div>
             {% for content_elem in many_pizzas %}
                 <div class="pizza-card col-4 py-1">
                     <div class="pizza-card__container container h-100 w-100">
@@ -20,14 +19,14 @@
                                 <img src="{{ content_elem.image.url }}" class="h-100 w-100" alt="">
                             </a>
                         </div>
-                        <div class="row"><a class="pizza-card__name" href="{{ content_elem.get_absolute_url }}">{{ content_elem.name }}</a></div>
+                        <div class="row"><a class="pizza-card__name" id="{{ content_elem.url }}" href="{{ content_elem.get_absolute_url }}">{{ content_elem.name }}</a></div>
                         <div class="pizza-card__size row">
-                            <button class="pizza-card__button col-auto">24 см</button>
+                            <button class="pizza-card__button active col-auto">24 см</button>
                             <button class="pizza-card__button col-auto">30 см</button>
                             <button class="pizza-card__button col-auto">40 см</button>
                         </div>
                         <div class="pizza-card__thickness row">
-                            <button class="pizza-card__button col-auto">Тонкое</button>
+                            <button class="pizza-card__button active col-auto">Тонкое</button>
                             <button class="pizza-card__button col-auto">Стандартное</button>
                         </div>
                         <div class="pizza-card__description row">

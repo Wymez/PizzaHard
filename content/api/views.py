@@ -15,3 +15,8 @@ class PizzaFilter(generics.ListAPIView):
     def get_queryset(self):
         category = self.kwargs['filter']
         return Pizza.objects.filter(description=category)
+
+class PizzaDetailView(generics.RetrieveAPIView):
+    lookup_field = 'url'
+    serializer_class = PizzaSerializer
+    queryset = Pizza.objects.all()

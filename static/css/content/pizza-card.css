@@ -1,5 +1,7 @@
 .pizza-card {
     height: 700px;
+    min-width: 350px;
+    max-width: 400px;
 }
 
 .pizza-card__container {
@@ -63,3 +65,7 @@
 .pizza-card__button:hover {
     background-color: #E85800;
 }
+.pizza-card__button.active.col-auto {
+    background-color: #E85800;
+}
+

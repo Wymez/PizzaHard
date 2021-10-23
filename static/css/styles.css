@@ -6,6 +6,7 @@
 @import "content/pizza-card.css";
 @import "header/menu.css";
 @import "content/promotion.css";
+@import "content/sorting.css";
 .block {
     background-color: #ddd;
     height: 100%;
@@ -18,14 +19,9 @@
 
 .content {
     min-height: 100px;
-    margin-bottom: 20px;
-    margin-left: 100px;
-    margin-right: 100px;
-}
-
-.filters {
-    margin-bottom: 20px;
-    margin-left: 100px;
+    margin: 0px 5%;
+    padding: 0px;
+    justify-content: flex-start;
 }
 
 .footer {
@@ -40,24 +36,6 @@
 .search-field {
     border: solid 1px;
 }
-
-.filter {
-    border: none;
-    outline: none;
-    padding: 12px 16px;
-    background-color: #FA8386;
-    color: white;
-    cursor: pointer;
-}
-
-.filter:hover {
-    background-color: #E85800;
-}
-
-.filter.active {
-    background-color: #E85800;
-}
-
 
 .pizza_button {
     background-color: red; /* Green */
