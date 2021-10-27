@@ -1,3 +1,5 @@
+import $ from "jquery"
+
 $("body").click(event => {
     let current = $(".active", event.target.parentNode)
     if(event.target.nodeName === "BUTTON" && event.target.closest(".content")) {
@@ -35,6 +37,7 @@ $("body").click(event => {
         })
     }
     if(event.target.closest(".header__basket-div")) {
+        console.log('ok')
         $(".popup").addClass("popup-showed");
         $("body").css('overflow', 'hidden');
     }

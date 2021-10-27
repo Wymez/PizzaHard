@@ -1,3 +1,5 @@
+import $ from "jquery"
+
 $(".basket").click(event => {
     if(event.target.parentNode.className === "product__minus") {
         minusOnePizzaInBasket(event)

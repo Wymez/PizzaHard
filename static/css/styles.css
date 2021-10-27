@@ -7,6 +7,10 @@
 @import "content/promotion.css";
 @import "header/menu.css";
 @import "account/auth-reg-styles.css";
+@import "./modal-window.css";
+@import "content/basket.css";
+@import "content/product.css";
+@import "content/content.css";
 
 
 .block {
