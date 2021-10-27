@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Pizza</title>
+</head>
+<body>
+        {% include 'includes/header.html' %}
+
+        <div class="popup">
+            <div class="popup__workspace">
+                <button class="popup__close-img"></button>
+                {% block modal %}
+                {% endblock %}
+            </div>
+        </div>
+
+        <div class="container-fluid">
+            {% block content %}
+
+            {% endblock %}
+        </div>
+
+        {% include 'includes/footer.html' %}
+</body>
+</html>

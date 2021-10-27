@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Pizza</title>
+</head>
+<body>
+    {% include 'includes/header.html' %}
+
+     <div class="popup-fade">
+        <div class="popup">
+            <a class="popup-close" href="#">
+                <img src="{% static 'src/img/close.png' %}" alt="">
+            </a>
+            {% block modal %}
+
+            {% endblock %}
+
+        </div>
+    </div>
+
+    <div class="container">penis</div>
+
+    <div class="container-fluid">
+        {% block content %}
+
+        {% endblock %}
+        {% include 'includes/footer.html' %}
+    </div>
+</body>
+</html>

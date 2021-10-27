@@ -41,10 +41,11 @@ html, body {
 	align-items: center;
 }
 .header__logo {
-	flex: 0 0 150px;
+	flex: 0 0 55px;
 	overflow: hidden;
 	position: relative;
 	z-index: 10;
+
 }
 .header__logo img{
 	max-width: 100%;
@@ -71,6 +72,7 @@ html, body {
 }
 .header__link {
 	color: #fff;
+	text-transform: uppercase;
 	font-size: 18px;
 	text-decoration: none;
 }
@@ -82,7 +84,7 @@ html, body {
 		height: 50px;
 	}
 	.header__logo{
-		flex: 0 0 150px;
+		flex: 0 0 55px;
 	}
 	.header__burger {
 		margin: 0px 20px 0px 0px;

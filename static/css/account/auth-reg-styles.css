@@ -1,0 +1,26 @@
+.content {
+    padding: 100px 0px 50px 0px;
+    min-height: 100%;
+    flex: 1 0 auto;
+}
+.text {
+    font-family: Arial
+}
+.helptext {
+    display: none;
+}
+form ul li {
+    display: none;
+}
+input[type="submit"] {
+    background-color: #FA8386;
+    color: white;
+    margin: 4px;
+    padding: 4px 8px;
+    border: none;
+    text-align: center;
+}
+.link {
+    text-decoration: none;
+    color: #FA8386;
+}
