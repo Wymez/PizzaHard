@@ -37,7 +37,6 @@ $("body").click(event => {
         })
     }
     if(event.target.closest(".header__basket-div")) {
-        console.log('ok')
         $(".popup").addClass("popup-showed");
         $("body").css('overflow', 'hidden');
         countTotalAmount(event);
@@ -174,5 +173,15 @@ function sendRequest(url, method="GET", data={}) {
         url: url,
         method: method,
         data: data
+    })
+}
+function countTotalAmount(event) {
+    let amountOfEachElem = $(event.currentTarget).find(".product__amount");
+    let sumProducts = $(event.currentTarget).find(".basket__total-price")[0]
+    let sumTotal = $(event.currentTarget).find(".basket__total-price")[0]
+    sumProducts.innerText = "Сумма: 0 руб."
+    amountOfEachElem.each(function (index) {
+        sumProducts.innerText = "Сумма: " + (parseInt(sumProducts.innerText.match(/\d+/)) + parseInt(this.innerText.match(/\d+/))) + " руб.";
+        console.log(sumProducts.innerText)
     })
 }

@@ -11667,7 +11667,7 @@ input[type="submit"] {
     background-color: transparent!important;
     border-radius: 0!important;
 }
-.basket__totalamount {
+.basket__total-amount {
     padding-top: 15px;
     display: block;
     font-weight: 600;
@@ -11833,6 +11833,7 @@ input[type="submit"] {
     background-color: #997a8d;
     height: 100%;
     justify-content: center;
+    align-items: center;
 }
 
 .promotion {
@@ -11853,7 +11854,7 @@ input[type="submit"] {
 
 .footer {
     min-height: 100px;
-    margin-bottom: 20px;
+    flex-shrink: 0;
 }
 
 .footer__link img {
@@ -11863,7 +11864,7 @@ input[type="submit"] {
 }
 
 .email {
-    margin: 30px 10px 10px 10px;
+    margin: 10px;
 }
 
 .btn-register {
@@ -11905,7 +11906,16 @@ html, body {
     background-color: white;
     margin: 0;
     padding: 0;
-    width: 100%;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+.container__main {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 155px 0px;
 }
 
 
