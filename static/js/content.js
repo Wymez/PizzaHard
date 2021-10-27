@@ -37,6 +37,7 @@ $("body").click(event => {
     if(event.target.closest(".header__basket-div")) {
         $(".popup").addClass("popup-showed");
         $("body").css('overflow', 'hidden');
+        countTotalAmount(event);
     }
     if(event.target.className === "popup__close-img" || event.target.className === "popup popup-showed") {
         let modalWindow = $(".popup")[0]
@@ -47,31 +48,37 @@ $("body").click(event => {
     }
     if(event.target.parentNode.className === "pizza-card__basket row justify-content-center") {
         if(event.target.innerText === "Добавлено") {
-            subtractCounterPizzaCardInBasket(event)
+            subtractCounterPizzaCardInBasket()
+            changeInCardBasketButtonToOrange(event)
             deletePizzaCardInBasket(event)
         }
         else {
-            addCounterPizzaCardInBasket(event)
+            addCounterPizzaCardInBasket()
+            changeInCardBasketButtonToPurple(event)
             addPizzaCardToBasket(event)
         }
-        checkOnZeroInBasket(event);
+        checkOnZeroInBasket();
     }
 })
-
-function addCounterPizzaCardInBasket(event) {
-    let amountCounter = $(".header__product-amount")[0];
+function changeInCardBasketButtonToPurple(event) {
     event.target.innerText = event.target.innerText.replace("В корзину", "Добавлено");
     $(event.target).addClass("pizza-card__basket_added")
-    amountCounter.value = parseInt(amountCounter.value) + 1;
 }
-function subtractCounterPizzaCardInBasket(event) {
-    let amountCounter = $(".header__product-amount")[0];
+function changeInCardBasketButtonToOrange(event) {
     event.target.innerText = event.target.innerText.replace("Добавлено", "В корзину");
     event.target.className = event.target.className.replace("pizza-card__basket_added", "");
+}
+
+function addCounterPizzaCardInBasket() {
+    let amountCounter = $(".header__product-amount")[0];
+    amountCounter.value = parseInt(amountCounter.value) + 1;
+}
+function subtractCounterPizzaCardInBasket() {
+    let amountCounter = $(".header__product-amount")[0];
     amountCounter.value = parseInt(amountCounter.value) - 1;
 }
 
-function checkOnZeroInBasket(event) {
+function checkOnZeroInBasket() {
     let amountCounter = $(".header__product-amount")[0];
     if(amountCounter.value === "0") {
         amountCounter.style.display = "none"
@@ -125,7 +132,6 @@ function deletePizzaCardInBasket(event) {
     currentBasketElems.each(function(item) {
       if(currentElemUrl === this.href) {
           this.closest(".product").remove()
-          console.log("Done!")
       }
     })
 }
