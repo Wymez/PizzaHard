@@ -7,10 +7,13 @@
                 <img src="{% static 'src/img/pizza-italiano.png' %}" alt="">
             </a>
             <div class="header__burger">
-                <span></span>
             </div>
             <nav class="header__menu">
                 <ul class="header__list">
+                    <li class="header__basket-div">
+                        <output class="header__product-amount">0</output>
+                        <button class="header__basket-img"></button>
+                    </li>
                     {% if request.user.is_authenticated %}
                     <li>
                         Hello {{ request.user.first_name}},

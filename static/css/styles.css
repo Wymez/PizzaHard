@@ -6,7 +6,10 @@
 @import "content/pizza-card.css";
 @import "header/menu.css";
 @import "content/promotion.css";
-@import "content/sorting.css";
+@import "content/content.css";
+@import "modal-window.css";
+@import "content/basket.css";
+@import "content/product.css";
 .block {
     background-color: #ddd;
     height: 100%;
@@ -17,12 +20,6 @@
     margin-bottom: 20px;
 }
 
-.content {
-    min-height: 100px;
-    margin: 0px 5%;
-    padding: 0px;
-    justify-content: flex-start;
-}
 
 .footer {
     min-height: 200px;

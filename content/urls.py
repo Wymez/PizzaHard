@@ -5,6 +5,7 @@ from . import views
 
 urlpatterns = [
     path('', views.pizza_list),
-    path('<slug:slug>/', views.pizza_detail, name='pizza_detail')
+    path('<slug:slug>/', views.pizza_detail, name='pizza_detail'),
+    path('basket/basket', views.pizza_basket, name='pizza_basket'),
 
 ]

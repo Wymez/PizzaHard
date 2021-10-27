@@ -2,6 +2,7 @@
     height: 700px;
     min-width: 350px;
     max-width: 400px;
+    padding: 4px;
 }
 
 .pizza-card__container {
@@ -46,10 +47,9 @@
     margin: 0px 110px;
     padding-top: 10px;
 }
-
 .pizza-card__basket {
     font-size: 15px;
-    margin-top: 20px;
+    margin-top: 10px;
     margin-left: 0px;
     margin-right: 0px;
 }
@@ -68,4 +68,19 @@
 .pizza-card__button.active.col-auto {
     background-color: #E85800;
 }
+.pizza-card__basket_added {
+    background-color: purple;
+    color: white;
+    margin: 4px;
+    padding: 4px 8px;
+    border: none;
+    text-align: center;
+}
+.pizza-card__basket_added:hover {
+    background-color: purple;
+}
+.pizza-card__basket_added:active {
+    background-color: purple;
+}
+
 

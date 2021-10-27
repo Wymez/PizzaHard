@@ -12,3 +12,6 @@ def pizza_detail(request, slug):
     one_pizza = get_object_or_404(Pizza, url=slug)
     return render(request, 'content/pizza_detail.html', {"one_pizza": one_pizza})
 
+def pizza_basket(request):
+    return render(request, 'basket/basket.html')
+

@@ -1,4 +1,4 @@
-*,*: before,*:after{
+*,*:before,*:after{
 	padding: 0;
 	margin: 0;
 	border: 0;
@@ -61,10 +61,13 @@ html, body {
 	position: relative;
 	margin: 0px 0px 0px 0px;
 	z-index: 4;
+	justify-content: center;
+	align-items: center;
 }
 .header__list li {
 	list-style: none;
-	margin: 0px 0px 0px 20px;
+	padding: 5px;
+	margin: 5px;
 }
 .header__link {
 	color: #fff;
@@ -76,7 +79,7 @@ html, body {
 		overflow: hidden;
 	}
 	.header__body{
-		height: 50;
+		height: 50px;
 	}
 	.header__logo{
 		flex: 0 0 150px;
@@ -153,10 +156,33 @@ html, body {
 		font-size: 18px;
 	}
 }
-.content {
-	padding: 100px;
+.header__basket-div {
+	position: relative;
 }
-.container {
+.header__basket-div:hover {
+	background-color: #E5EBEB;
+	border-radius: 40px;
+	cursor: pointer;
 }
-.content__text {
+.header__basket-img {
+	display: block;
+	background: url("../../src/icons/test.svg") no-repeat center;
+	height: 30px;
+	width: 30px;
+	border : none !important;
+}
+.header__product-amount {
+    position: absolute;
+    right: 3px;
+    top: 4px;
+    font-size: 10px;
+    color: white;
+    padding: 0px;
+    background-color: red;
+    border-radius: 100px;
+    margin: 0px;
+    height: 13px;
+    width: 13px;
+    text-align: center;
+	display: none;
 }

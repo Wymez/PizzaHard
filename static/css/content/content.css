@@ -1,0 +1,41 @@
+.content {
+    min-height: 100px;
+    margin: 0px 5%;
+    padding: 0px;
+    justify-content: flex-start;
+}
+.content__sorting {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 4px;
+}
+.content__sorting-button {
+    border: none;
+    outline: none;
+    padding: 12px 16px;
+    background-color: #FA8386;
+    color: white;
+    cursor: pointer;
+    margin-right: 10px;
+}
+.content__sorting-button:hover {
+    background-color: #E85800;
+}
+.content__sorting-button.active {
+    background-color: #E85800;
+}
+.content__reset-button {
+    background: url('../../src/img/close.png') no-repeat;
+    background-size: auto;
+    background-position: center;
+    padding: 24px 30px;
+    height: 30px;
+}
+.content__reset-button:hover {
+	filter: drop-shadow(0px 2px 2px gray);
+}
+.content__reset-button:active {
+    transform: translate(0px, 2px);
+}
