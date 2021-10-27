@@ -4,15 +4,16 @@
 /*TODO: Выносить цвета, шрифты в переменные*/
 /*TODO: Выносить повторяющиеся стили в миксины*/
 @import "content/pizza-card.css";
-@import "header/menu.css";
 @import "content/promotion.css";
-@import "content/content.css";
-@import "modal-window.css";
-@import "content/basket.css";
-@import "content/product.css";
+@import "header/menu.css";
+@import "account/auth-reg-styles.css";
+
+
 .block {
-    background-color: #ddd;
+    display: flex;
+    background-color: #997a8d;
     height: 100%;
+    justify-content: center;
 }
 
 .promotion {
@@ -20,10 +21,30 @@
     margin-bottom: 20px;
 }
 
+.content {
+    margin-bottom: 20px;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+.filters {
+    margin-bottom: 20px;
+    margin-left: 100px;
+}
 
 .footer {
-    min-height: 200px;
+    min-height: 100px;
     margin-bottom: 20px;
+}
+
+.footer__link img {
+    width: 100px;
+	display: block;
+	margin: 10px 10px 10px 10px;
+}
+
+.email {
+    margin: 30px 10px 10px 10px;
 }
 
 .btn-register {
@@ -32,6 +53,23 @@
 
 .search-field {
     border: solid 1px;
+}
+
+.filter {
+    border: none;
+    outline: none;
+    padding: 12px 16px;
+    background-color: #FA8386;
+    color: white;
+    cursor: pointer;
+}
+
+.filter:hover {
+    background-color: #E85800;
+}
+
+.filter.active {
+    background-color: #E85800;
 }
 
 .pizza_button {
