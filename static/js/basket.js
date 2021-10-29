@@ -1,13 +1,21 @@
 import $ from "jquery"
 
+//TODO: если следовать ООП подходу, то я бы реализовал класс OrderBasket c методами
+// addItem(item) - добавление позиции в корзину
+// deleteItem(item) - удаление позиции из корзины
+// Элементы интерфейса будут вызывать методы класса и работать только с ним.
+// Внутри экземпляра класса можно хранить все необходимую информацию по заказу. Таким образом можно отделить модель данных
+// от внешнего представления
 
 $(".basket").click(event => {
+    //TODO: все названия классов вынести в отдельные переменные и работать с этими переменными
     if(event.target.parentNode.className === "product__minus") {
         minusOnePizzaInBasket(event)
     }
     if(event.target.parentNode.className === "product__plus") {
         plusOnePizzaInBasket(event)
     }
+    //TODO: содержимое внутри if поместить в отдельную функцию/функции
     if(event.target.parentNode.className === "product__delete") {
         let elemUrl = $(event.target).closest(".product").find(".product__name")[0].href;
         let collectionOfPizzaCards = $("body").find(".pizza-card__name");
@@ -48,12 +56,16 @@ function deleteElemInBasket(event) {
 }
 
 function countTotalAmount(event) {
+    //TODO: на примере этого участка кода можно увидеть проблему. Если вы, например, захотите поменять названия css  классов,
+    //  то вам придется менять также код приложения. Получается внутренняя логика приложения зависит от внешнего представления.
+    // Это считается плохой практикой, нужно разделать логику и внешнее представление.
     let amountOfEachElem = $(event.currentTarget).find(".product__amount");
     let sumProducts = $(event.currentTarget).find(".basket__total-price")[0]
     let sumTotal = $(event.currentTarget).find(".basket__total-price")[0]
     sumProducts.innerText = "Сумма: 0 руб."
     amountOfEachElem.each(function (index) {
         sumProducts.innerText = "Сумма: " + (parseInt(sumProducts.innerText.match(/\d+/)) + parseInt(this.innerText.match(/\d+/))) + " руб.";
+        //TODO: нужно иметь привычку удалять console.log
         console.log(sumProducts.innerText)
     })
 }

@@ -1,6 +1,10 @@
 import $ from "jquery"
 
 $("body").click(event => {
+    //TODO: тут все плохо :)
+    //TODO: нужно разбить на отдельные функции без кучи if else
+    //TODO: странная логика вешать обработчик на любой click в body
+
     let current = $(".active", event.target.parentNode)
     if(event.target.nodeName === "BUTTON" && event.target.closest(".content")) {
         if (current[0])
@@ -11,6 +15,7 @@ $("body").click(event => {
 
     if (event.target.parentNode.className === "pizza-card__size row") {
         let currentObjectUrl = $(".pizza-card__name", event.target.closest(".pizza-card__container"))
+        //TODO: нужно сделать отдельный сервис для работы через api
         sendRequest("/api/"+currentObjectUrl[0].id)
             .then(response => {
                 let elemPrice = $(".pizza-card__price", event.target.closest(".pizza-card__container"))
@@ -62,6 +67,9 @@ $("body").click(event => {
         checkOnZeroInBasket();
     }
 })
+//TODO: я бы по другому назвал такую функцию. Название поменяйВКорзинеКнопкуНаФиолетовый мне особо ничего не говорит,
+// название отобразиЗаказаДобавленным более информативно лично для меня.
+//TODO: Вопрос. Если я попрошу сделать цвет не фиолетовый, а зеленый, будете js код менять? Можно ли было этого избежать?)
 function changeInCardBasketButtonToPurple(event) {
     event.target.innerText = event.target.innerText.replace("В корзину", "Добавлено");
     $(event.target).addClass("pizza-card__basket_added")
@@ -90,6 +98,7 @@ function checkOnZeroInBasket() {
     }
 }
 function addPizzaCardToBasket(event) {
+    //TODO: если переменная не меняется, то используйте let вместо const
     let pizzaParentElem = $(event.target.closest(".pizza-card__container"));
     let pizzaSize = pizzaParentElem.find(".pizza-card__size").find(".active")[0];
     let pizzaThickness = pizzaParentElem.find(".pizza-card__thickness").find(".active")[0];
@@ -97,6 +106,8 @@ function addPizzaCardToBasket(event) {
     let pizzaPrice = pizzaParentElem.find(".pizza-card__price")[0];
     let pizzaImg = pizzaParentElem.find("img")[0];
     console.log(pizzaImg.src);
+    // TODO: Нужно тянуть src для img не из интернета, а брать локальные версии. Это влияет на скорость загрузки и сторонний сайт может отвалиться
+    //
     let element = `<div class="product">
         <div class="product__thumb">
             <img class="product__img" src=${pizzaImg.src}>
@@ -109,6 +120,7 @@ function addPizzaCardToBasket(event) {
         <div class="product__plus-minus">
             <span class="product__minus">
                 <img
+
                     src="https://static.tildacdn.com/lib/linea/c8eecd27-9482-6c4f-7896-3eb09f6a1091/arrows_circle_minus.svg"
                     style="width:16px;height:16px;border:0">
             </span>
